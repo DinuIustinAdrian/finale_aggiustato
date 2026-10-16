@@ -4,6 +4,8 @@ import os
 # Funzione creazione sala
 
 def crea_sala():
+    ''' Crea la lista di liste per rappresentare la sala cinematografica
+    '''
     sala = []
     for i in range(5):
         if i == 3:                    
@@ -17,6 +19,10 @@ def crea_sala():
 # Visualizzazione della sala
  
 def mostra_sala(sala):
+    ''' Mostra su terminale l'attuale disposizione della sala
+
+    @sala lista di liste contente lo stato occupazionale della sala
+    '''
     print("\n========= SALA CINEMA PARADISO ========")
     print("      ", end="")
     
@@ -37,6 +43,14 @@ def mostra_sala(sala):
 # Prenotazione di un posto
  
 def prenota(sala, fila, posto):
+    ''' Funzione che gestisce la prenotazione di un posto
+
+    @sala lista di liste contenente l'attuale stato della sala
+
+    @fila int, variabile contenente la fila che si vuole prenotare 
+
+    @posto int, variabile contenente il posto, all'interno della fila, che si vuole prenotare
+    '''
    
     if fila < 1 or fila > 5 or posto < 1 or posto > 10:      
         return None                                         

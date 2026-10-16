@@ -4,6 +4,10 @@ import csv
 # Funzione salva sala
 
 def salva_sala(sala):
+    '''Salva la sala in un file sala.csv per poterla caricare in un altra sessione del programma
+
+    @sala: lista di liste contenente la sala da salvare
+    '''
     with open("sala.csv", "w", newline="") as file:       
         writer = csv.writer(file)                           
         writer.writerows(sala)                            
@@ -13,6 +17,10 @@ def salva_sala(sala):
 # Funzione carica sala
  
 def carica_sala(incasso):
+    ''' Carica l'incasso di una precedente sessione
+
+    @incasso: [int] variabile dove salvare l'incasso
+    '''
     if os.path.exists("sala.csv") and os.path.exists("incasso_sala.txt"):
 
         with open("sala.csv", "r", newline="") as file:
@@ -33,6 +41,11 @@ def carica_sala(incasso):
     
  
 def salva_incasso(incasso):
+    ''' Carica l'incasso dell'attuale sessione su un
+        file txt
+    
+        @incasso: [int] variabile da salvare
+        '''
     with open("incasso_sala.txt", "w") as file:       
         file.write(str(incasso))                           
     print("Incasso in incasso_sala.txt")
